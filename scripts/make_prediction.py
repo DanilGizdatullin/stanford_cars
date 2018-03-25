@@ -20,12 +20,6 @@ epochs = 50
 
 model = applications.VGG19(weights="imagenet", include_top=False, input_shape=(img_width, img_height, 3))
 
-# Freeze the layers which you don't want to train. Here I am freezing the first 17 layers.
-number_of_layers = 0
-for layer in model.layers[:17]:
-    print(layer)
-    layer.trainable = False
-
 model.summary()
 
 x = model.output
